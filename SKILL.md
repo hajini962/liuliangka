@@ -1,27 +1,12 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 4b431c1c0043833738b54835b4fa691a_54677f8bbc9f11f1a1bf52540064ee0f
-    ReservedCode1: pR+A/gn0v7rkOfqpI1I8vAeaUR7cFARQ9wvn+4Bd2/GMaiU5UofAYL+2Z8BBFXVIcsvDxhACZiX3XXpL4UiPu8LOfRTih4k0HlVUSl/4I1nZ/+3Y933nBf0kyis3A8Y9dKhZl7XxamS8zP8cV6QdQP4iexnjkd2+M41w5Rsx+5J0YUDPcrIMZ3vfgD4=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 4b431c1c0043833738b54835b4fa691a_54677f8bbc9f11f1a1bf52540064ee0f
-    ReservedCode2: pR+A/gn0v7rkOfqpI1I8vAeaUR7cFARQ9wvn+4Bd2/GMaiU5UofAYL+2Z8BBFXVIcsvDxhACZiX3XXpL4UiPu8LOfRTih4k0HlVUSl/4I1nZ/+3Y933nBf0kyis3A8Y9dKhZl7XxamS8zP8cV6QdQP4iexnjkd2+M41w5Rsx+5J0YUDPcrIMZ3vfgD4=
----
-
-
-
-
-
-# 流量卡办理推荐
+# 流量卡办理推荐#号卡套餐检索 Skill
 
 ## 用途
 
-调用入口固定为用户提供的三个号卡店铺（对外统一命名"互联网号卡星球官方店铺1/2/3"）。用户提供省份/地区后，实时抓取这三个店铺的在售流量卡，筛选出「该省可办（收货地为归属地）」和「发全国」的卡，展示优惠后价格、是否可续约，并为每张卡附带领取地址与店铺地址。宽带产品不主动展示。
+调用入口固定为互联网号卡星球官方店铺（对外统一命名"互联网号卡星球官方店铺1/2/3"）。用户提供省份/地区后，实时抓取店铺的在售流量卡，筛选出「该省可办（收货地为归属地）」和「发全国」的卡，展示优惠后价格、是否可续约，并为每张卡附带领取地址与店铺地址。宽带产品不主动展示。
 
 ## 固定店铺入口（调用入口）
 
-仅从以下三个店铺抓取数据，严禁扩展到其他店铺。三家店铺对外统一命名为"互联网号卡星球官方店铺1/2/3"，**任何输出（推荐文案、卡片、链接说明）严禁出现页面原标题**（如"172号卡平台""四大运营商高流量低资费套餐随心选"等），店铺地址一律使用以下用户提供的原始链接：
+仅从以下店铺抓取数据，严禁扩展到其他店铺。三家店铺对外统一命名为"互联网号卡星球官方店铺1/2/3"，**任何输出（推荐文案、卡片、链接说明）严禁出现页面原标题**，店铺地址一律使用以下用户提供的原始链接：
 
 - 互联网号卡星球官方店铺1：https://tui.haonetwork.cn/#/pages/micro_store/index?agent_id=aab185d12fbafe0a2210db56129c38e0
 - 互联网号卡星球官方店铺2：https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836
@@ -95,6 +80,4 @@ python scripts/fetch_cards.py <省份>
 
 ## 数据源技术细节
 
-三个店铺均为 JS 动态渲染页面，直接抓取网页只能拿到部分内容或空壳。脚本已内置可直接调用的 API 接口，详见 `references/api_reference.md`（含接口地址、参数、字段含义）。若脚本某天失效（接口改版），参考该文档用浏览器渲染店铺页面重新抓数据，并更新脚本。
-*（内容由AI生成，仅供参考）*
-*（内容由AI生成，仅供参考）*
+店铺均为 JS 动态渲染页面，直接抓取网页只能拿到部分内容或空壳。脚本已内置可直接调用的 API 接口，详见 `references/api_reference.md`（含接口地址、参数、字段含义）。若脚本某天失效（接口改版），参考该文档用浏览器渲染店铺页面重新抓数据，并更新脚本。
