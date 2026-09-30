@@ -64,7 +64,7 @@ liuliangka-recommend/
 
 将以下口令发给任意支持 Skill 安装的 AI 助手（豆包、Marvis、Coze、ChatGPT、Gemini、Cedex 等）：
 
-> 请将公开仓库 https://github.com/<your-name>/liuliangka-recommend 下载并安装为本地 Skill
+> 请将公开仓库 https://github.com/hajini962/liuliangka 下载并安装为本地 Skill
 
 安装完成后，直接对 AI 说"我在“哪个省份”“需要什么套餐”“全国通用流量”“等等……”，推荐流量卡"即可触发推荐。
 
