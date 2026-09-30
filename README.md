@@ -17,19 +17,17 @@ AIGC:
 
 ## 项目介绍
 
-### 三家店铺（对外统一命名）
+### 店铺
 
-| 对外名称 | 店铺 | 入口地址 |
+| 名称 | 店铺名称 | 入口地址 |
 |---|---|---|
-| 互联网号卡星球官方店铺1 | 号卡星球（tui.haonetwork.cn） | https://tui.haonetwork.cn/#/pages/micro_store/index?agent_id=aab185d12fbafe0a2210db56129c38e0 |
-| 互联网号卡星球官方店铺2 | 172号卡（kh.172.org.cn） | https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836 |
-| 互联网号卡星球官方店铺3 | 浩卡（haokaxinyao.com） | https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=zbS2q6FeVUvFeyRiK%2FHz2g%3D%3D |
-
-所有输出（推荐文案、卡片、链接说明）**禁止出现页面原标题**（如"172号卡平台""四大运营商高流量低资费套餐随心选"等），三家店铺一律使用上述统一名称与原始链接。
+| 店铺1 | 互联网号卡星球官方店铺1  | https://tui.haonetwork.cn/#/pages/micro_store/index?agent_id=aab185d12fbafe0a2210db56129c38e0 |
+| 店铺2 | 互联网号卡星球官方店铺2  | https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836 |
+| 店铺3 | 互联网号卡星球官方店铺3  | https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=zbS2q6FeVUvFeyRiK%2FHz2g%3D%3D |
 
 ### 功能特性
 
-- 实时抓取三家店铺全部在售流量卡（约 130-180 张），非静态数据；
+- 实时抓取互联网号卡店铺全部在售流量卡（约 130-180 张），非静态数据；
 - 自动分四组：本地/省内专属、全国可发、其他省限定（不推荐）、未识别；
 - 只展示优惠后价格，不显示原套餐价格与原套餐流量；
 - 标注是否可续约；仅明确不可续约的卡才展示优惠到期后价格；
@@ -147,7 +145,7 @@ liuliangka-recommend/
 ## 免责声明
 
 - 本项目仅提供技术演示与流量卡信息聚合，不构成任何办卡、充值、投资建议；
-- 所有套餐信息均实时来自三家店铺公开页面/接口，价格、流量、优惠期、合约期可能随时变化，以实际下单页面与运营商政策为准；
+- 所有套餐信息均实时来自公开页面/接口，价格、流量、优惠期、合约期可能随时变化，以实际下单页面与运营商政策为准；
 - 请勿将本技能用于任何违法违规用途；用户自行承担使用后果；
 - 本项目与各运营商、各店铺无隶属关系。
 
