@@ -2,12 +2,14 @@
 AIGC:
     Label: "1"
     ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 4b431c1c0043833738b54835b4fa691a_5266bd98bc9f11f1a1bf52540064ee0f
-    ReservedCode1: kGDRAhuKpm61A8Brj5ah4cDQ0F3vKPSzcArWnB06qfHMCJJOYJ1eRDv8vGr4KZmUZsDn5jywbw7xM0GEpSijI+Es58366WWXW6pmUYqLefsbySPZSpLwrgYH6crhfXtIWP0GGVOiTSIIiIlNdkPS7MRfY2VZ46r219vo5MmSA9w/Fo74PQ+Q52OJmdk=
+    ProduceID: 4b431c1c0043833738b54835b4fa691a_9b6b15a6bca211f1a1bf52540064ee0f
+    ReservedCode1: qtEqP+VGwXjcR2/ruZxcHPD8GpOxnSBeynGzevc86890LHpFrHjH0HI0SekFNN3R8QK97M7bgD+Xbqb16/vDJ/+9b7hfMlxy59DKNHnnDPn3fSs+wbi+2gNvVECvKS+DuC68iwPIhwOZNZN3NyVCSm6p3ikVDvxOCmJNTzrtEAfh6FBHnyYsZ4OFvwY=
     ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 4b431c1c0043833738b54835b4fa691a_5266bd98bc9f11f1a1bf52540064ee0f
-    ReservedCode2: kGDRAhuKpm61A8Brj5ah4cDQ0F3vKPSzcArWnB06qfHMCJJOYJ1eRDv8vGr4KZmUZsDn5jywbw7xM0GEpSijI+Es58366WWXW6pmUYqLefsbySPZSpLwrgYH6crhfXtIWP0GGVOiTSIIiIlNdkPS7MRfY2VZ46r219vo5MmSA9w/Fo74PQ+Q52OJmdk=
+    PropagateID: 4b431c1c0043833738b54835b4fa691a_9b6b15a6bca211f1a1bf52540064ee0f
+    ReservedCode2: qtEqP+VGwXjcR2/ruZxcHPD8GpOxnSBeynGzevc86890LHpFrHjH0HI0SekFNN3R8QK97M7bgD+Xbqb16/vDJ/+9b7hfMlxy59DKNHnnDPn3fSs+wbi+2gNvVECvKS+DuC68iwPIhwOZNZN3NyVCSm6p3ikVDvxOCmJNTzrtEAfh6FBHnyYsZ4OFvwY=
 ---
+
+
 
 
 
@@ -19,15 +21,15 @@ AIGC:
 
 ### 店铺
 
-| 名称 | 店铺名称 | 入口地址 |
-|---|---|---|
-| 店铺1 | 互联网号卡星球官方店铺1  | https://tui.haonetwork.cn/#/pages/micro_store/index?agent_id=aab185d12fbafe0a2210db56129c38e0 |
-| 店铺2 | 互联网号卡星球官方店铺2  | https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836 |
-| 店铺3 | 互联网号卡星球官方店铺3  | https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=zbS2q6FeVUvFeyRiK%2FHz2g%3D%3D |
+- 互联网号卡星球官方店铺1：https://tui.haonetwork.cn/#/pages/micro_store/index?agent_id=aab185d12fbafe0a2210db56129c38e0
+- 互联网号卡星球官方店铺2：https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836
+- 互联网号卡星球官方店铺3：https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=zbS2q6FeVUvFeyRiK%2FHz2g%3D%3D
+
+所有输出（推荐文案、卡片、链接说明）**禁止出现页面原标题**（如"172号卡平台""四大运营商高流量低资费套餐随心选"等），三家店铺一律使用上述统一名称与原始链接。
 
 ### 功能特性
 
-- 实时抓取互联网号卡店铺全部在售流量卡（约 130-180 张），非静态数据；
+- 实时抓取三家店铺全部在售流量卡（约 130-180 张），非静态数据；
 - 自动分四组：本地/省内专属、全国可发、其他省限定（不推荐）、未识别；
 - 只展示优惠后价格，不显示原套餐价格与原套餐流量；
 - 标注是否可续约；仅明确不可续约的卡才展示优惠到期后价格；
@@ -64,19 +66,11 @@ liuliangka-recommend/
 
 ## 快速开始
 
-```bash
-# 1. 克隆或下载本仓库
-git clone https://github.com/<your-name>/liuliangka-recommend.git
-cd liuliangka-recommend
+将以下口令发给任意支持 Skill 安装的 AI 助手（豆包、Marvis、Coze、ChatGPT、Gemini、Cedex 等）：
 
-# 2. （可选）安装依赖（脚本本身只用标准库，此步仅为兼容声明）
-python -m pip install requests
+> 请将公开仓库 https://github.com/<your-name>/liuliangka-recommend 下载并安装为本地 Skill
 
-# 3. 运行脚本（省份可写"陕西"或"陕西省"）
-python scripts/fetch_cards.py 陕西
-# 输出 JSON：
-python scripts/fetch_cards.py 陕西 --json
-```
+安装完成后，直接对 AI 说"我在陕西，推荐流量卡"即可触发推荐。
 
 运行输出示例见 `examples/sample_output.txt`。
 
@@ -145,12 +139,13 @@ liuliangka-recommend/
 ## 免责声明
 
 - 本项目仅提供技术演示与流量卡信息聚合，不构成任何办卡、充值、投资建议；
-- 所有套餐信息均实时来自公开页面/接口，价格、流量、优惠期、合约期可能随时变化，以实际下单页面与运营商政策为准；
+- 所有套餐信息均实时来自三家店铺公开页面/接口，价格、流量、优惠期、合约期可能随时变化，以实际下单页面与运营商政策为准；
 - 请勿将本技能用于任何违法违规用途；用户自行承担使用后果；
 - 本项目与各运营商、各店铺无隶属关系。
 
 ## License
 
 [MIT](LICENSE)
+*（内容由AI生成，仅供参考）*
 *（内容由AI生成，仅供参考）*
 *（内容由AI生成，仅供参考）*
