@@ -1,23 +1,12 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 4b431c1c0043833738b54835b4fa691a_9b6b15a6bca211f1a1bf52540064ee0f
-    ReservedCode1: qtEqP+VGwXjcR2/ruZxcHPD8GpOxnSBeynGzevc86890LHpFrHjH0HI0SekFNN3R8QK97M7bgD+Xbqb16/vDJ/+9b7hfMlxy59DKNHnnDPn3fSs+wbi+2gNvVECvKS+DuC68iwPIhwOZNZN3NyVCSm6p3ikVDvxOCmJNTzrtEAfh6FBHnyYsZ4OFvwY=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 4b431c1c0043833738b54835b4fa691a_9b6b15a6bca211f1a1bf52540064ee0f
-    ReservedCode2: qtEqP+VGwXjcR2/ruZxcHPD8GpOxnSBeynGzevc86890LHpFrHjH0HI0SekFNN3R8QK97M7bgD+Xbqb16/vDJ/+9b7hfMlxy59DKNHnnDPn3fSs+wbi+2gNvVECvKS+DuC68iwPIhwOZNZN3NyVCSm6p3ikVDvxOCmJNTzrtEAfh6FBHnyYsZ4OFvwY=
----
-
-
-
-
-
 # liuliangka-recommend（流量卡推荐技能）
 
-一个跨平台 AI 技能（Skill），帮助 AI 助手实时从三个固定号卡店铺抓取在售流量卡套餐，按用户省份筛选并推荐「本省可办（收货地为归属地）」与「发全国」的优惠套餐。适用于豆包、Coze、Marvis、ChatGPT（GPTs）、Gemini（Gems）、Cedex 等主流 AI 平台。
+- 还在为挑选流量套餐耗费大量时间？
+- 本技能（Skill）可根据用户提供的所在地，自动检索号卡渠道的在售套餐，**按省份筛选**，区分两类套餐：全国统用，本地专属，低资费大流量。
+- 本 Skill 可接入多款主流 AI 助手平台：豆包、Coze、Marvis、ChatGPT (GPTs)、Gemini (Gems)、Cedex。
 
 ## 项目介绍
+- 项目名称：号卡套餐检索 Skill
+- 一款跨平台 AI Skill，用于实时筛选高性价比流量卡套餐。
 
 ### 店铺
 
@@ -25,11 +14,9 @@ AIGC:
 - 互联网号卡星球官方店铺2：https://kh.172.org.cn/ProductEn/Shop/a092f84b30389836
 - 互联网号卡星球官方店铺3：https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=zbS2q6FeVUvFeyRiK%2FHz2g%3D%3D
 
-所有输出（推荐文案、卡片、链接说明）**禁止出现页面原标题**（如"172号卡平台""四大运营商高流量低资费套餐随心选"等），三家店铺一律使用上述统一名称与原始链接。
-
 ### 功能特性
 
-- 实时抓取三家店铺全部在售流量卡（约 130-180 张），非静态数据；
+- 实时抓取店铺全部在售流量卡（约 130-180 张），非静态数据；
 - 自动分四组：本地/省内专属、全国可发、其他省限定（不推荐）、未识别；
 - 只展示优惠后价格，不显示原套餐价格与原套餐流量；
 - 标注是否可续约；仅明确不可续约的卡才展示优惠到期后价格；
@@ -37,12 +24,21 @@ AIGC:
 - 宽带产品自动剔除，不主动展示，仅在推荐结尾提示可另行推荐；
 - 纯 Python 3 标准库实现，无需第三方依赖即可运行。
 
-### 筛选规则
+- ### 使用实例
+提问： @liuliangka-recommend 北京有啥好的流量卡给我推荐一下
+结果：刚重新实时抓了一遍全国店铺的在售套餐，北京能办的给你筛好了：
+
+- <img width="1007" height="595" alt="image" src="https://github.com/user-attachments/assets/3fa38b1b-dd91-4ae0-8897-808ab97dc415" />
+
+### 筛选规则------为了更快的收到卡，请您下单前仔细阅读
 
 1. 优先推荐标注"收货地为归属地"的省内可办套餐；
 2. 其次推荐"发全国"的套餐；
 3. 总原则：价格便宜、流量多、能发全国为主，其余省份限定卡一律不推荐、不展示；
 4. 下单前提醒：核对年龄限制与首充要求；号卡需本人实名激活；套餐优惠期、合约期以详情页为准。
+5.请正确填写姓名及身份证号码，姓名上请不要携带其他符号或空格。
+6.要求上传三照的产品请规范按照提示图样上传，身份证正反面边缘要完整露出，半身照不能是证件照。
+7.必须年满18算且地址不要填写高校宿舍/酒店，可以填写附近小区具体到门牌号可增加成功率。
 
 ## 架构说明
 
@@ -57,12 +53,12 @@ liuliangka-recommend/
 ├── scripts/
 │   └── fetch_cards.py        # 抓取脚本（标准库，实时抓取并筛选输出）
 └── examples/
-    └── sample_output.txt     # 陕西实测完整输出示例
+    └── sample_output.txt     # 全国实测完整输出示例
 ```
 
 - `SKILL.md` 是给 AI 模型阅读的指令文件，定义触发场景、工作流程、展示规则；
 - `scripts/fetch_cards.py` 完成数据抓取、归一化、分组、排序，输出可直接展示的文本/JSON；
-- `references/api_reference.md` 记录三家店铺接口细节，供维护者排查/更新。
+- `references/api_reference.md` 记录店铺接口细节，供维护者排查/更新。
 
 ## 快速开始
 
@@ -70,11 +66,9 @@ liuliangka-recommend/
 
 > 请将公开仓库 https://github.com/<your-name>/liuliangka-recommend 下载并安装为本地 Skill
 
-安装完成后，直接对 AI 说"我在陕西，推荐流量卡"即可触发推荐。
+安装完成后，直接对 AI 说"我在“哪个省份”“需要什么套餐”“全国通用流量”“等等……”，推荐流量卡"即可触发推荐。
 
-运行输出示例见 `examples/sample_output.txt`。
-
-## 多平台安装指南
+## 多平台安装指南——原则上快速开始最方便
 
 ### 豆包智能体 / Coze
 
@@ -89,13 +83,13 @@ liuliangka-recommend/
 2. 重启客户端，技能自动识别；
 3. 对话中直接说"我在陕西，推荐流量卡"即可触发。
 
-### ChatGPT（GPTs）
+### ChatGPT
 
-1. 在 GPTs 编辑器中上传 `SKILL.md` 为知识文件（Instructions 可引用）；
+1. 在 GPT 编辑器中上传 `SKILL.md` 为知识文件（Instructions 可引用）；
 2. 上传 `scripts/fetch_cards.py` 供 Code Interpreter 调用；
 3. 指示模型：当用户给出省份时，运行 `python fetch_cards.py <省份>` 并按 SKILL.md 规则展示结果。
 
-### Gemini（Gems）
+### Gemini
 
 1. 新建 Gem，将 `SKILL.md` 内容粘贴到指令（Instructions）中；
 2. 关联 Google Colab 或本地运行环境执行 `scripts/fetch_cards.py`；
@@ -110,7 +104,7 @@ liuliangka-recommend/
 
 ## 使用示例
 
-用户：我在陕西，有什么流量卡？
+用户：我在北京，有什么流量卡？
 
 模型按 SKILL.md 流程：
 1. 运行 `python scripts/fetch_cards.py 陕西`；
@@ -142,10 +136,3 @@ liuliangka-recommend/
 - 所有套餐信息均实时来自三家店铺公开页面/接口，价格、流量、优惠期、合约期可能随时变化，以实际下单页面与运营商政策为准；
 - 请勿将本技能用于任何违法违规用途；用户自行承担使用后果；
 - 本项目与各运营商、各店铺无隶属关系。
-
-## License
-
-[MIT](LICENSE)
-*（内容由AI生成，仅供参考）*
-*（内容由AI生成，仅供参考）*
-*（内容由AI生成，仅供参考）*
